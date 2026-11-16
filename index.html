@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101126">
+  <meta name="description" content="NovaCart — a modern demo storefront for discovering everyday essentials.">
+  <title>NovaCart — Shop the good stuff</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="NovaCart home"><span class="brand-mark">N</span> nova<span>cart</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#about">Our story</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button search-toggle" aria-label="Focus search" title="Search">⌕</button>
+      <button class="cart-button" id="open-cart" aria-label="Open shopping cart">Bag <span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> THE EVERYDAY EDIT — 2026</div>
+        <h1>Good finds.<br><span>Great energy.</span></h1>
+        <p>Thoughtful picks for your space, your style, and everything in between. Find your next favourite thing.</p>
+        <div class="hero-actions"><a class="primary-button" href="#shop">Explore the store <span>↗</span></a><span class="micro-note">Curated for the curious.</span></div>
+        <div class="hero-stats"><div><strong>120+</strong><small>Fresh finds</small></div><div><strong>4.9/5</strong><small>Happy shoppers</small></div><div><strong>Free</strong><small>Shipping over ₹999</small></div></div>
+      </div>
+      <div class="hero-art" aria-label="Featured product display">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-glass-card"><span class="hero-tag">THE NEW DROP</span><div class="hero-object">✦</div><div class="hero-card-bottom"><div><small>JUST LANDED</small><strong>Little things, big mood.</strong></div><span class="round-arrow">↗</span></div></div>
+        <div class="floating-chip chip-top">✳ Made to delight</div><div class="floating-chip chip-bottom">✦ Your next obsession</div>
+      </div>
+    </section>
+
+    <section class="trust-strip"><span>✦ Carefully selected</span><span>◈ Easy returns</span><span>✧ Secure checkout demo</span><span>✦ New drops often</span></section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading"><div><div class="eyebrow">THE GOOD STUFF</div><h2>Shop the edit<span>.</span></h2></div><label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Find something lovely..." aria-label="Search products"></label></div>
+      <div class="shop-toolbar"><div class="filters" id="filters" aria-label="Filter products">
+        <button class="filter-chip active" data-category="All">All items</button><button class="filter-chip" data-category="Tech">Tech</button><button class="filter-chip" data-category="Home">Home</button><button class="filter-chip" data-category="Style">Style</button><button class="filter-chip" data-category="Lifestyle">Lifestyle</button>
+      </div><label class="sort-label">Sort by <select id="sort-select"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label></div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="empty-state" id="empty-state" hidden>No products match that search. Try another word.</p>
+    </section>
+
+    <section class="promo" id="collections"><div class="promo-icon">✷</div><div><div class="eyebrow">A LITTLE SOMETHING EXTRA</div><h2>Your next favourite is<br>one click away.</h2><p>Browse the collection and make your everyday a little more you.</p></div><a href="#shop" class="secondary-button">Find your thing ↗</a></section>
+    <section class="about-section" id="about"><div class="eyebrow">A NOTE FROM US</div><h2>Less scrolling.<br><span>More discovering.</span></h2><p>NovaCart is a sample storefront built to make browsing feel simple, joyful, and a little bit special. This demo uses sample products and a local cart — no real payments or orders are processed.</p></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#"><span class="brand-mark">N</span> nova<span>cart</span></a><span>Made for good finds. © <span id="year"></span> NovaCart</span><a href="#shop">Back to top ↑</a></footer>
+
+  <div class="overlay" id="cart-overlay" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header"><div><div class="eyebrow">YOUR PICKS</div><h2>Your bag <span id="drawer-count">(0)</span></h2></div><button class="close-button" id="close-cart" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><div>✧</div><h3>Your bag is taking a nap.</h3><p>Add something you love and it’ll show up here.</p><button class="primary-button" id="continue-shopping">Keep exploring ↗</button></div>
+    <div class="cart-summary" id="cart-summary" hidden><div><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div><small>Shipping and taxes calculated at checkout.</small><button class="primary-button checkout-button" id="checkout-button">Continue to checkout ↗</button><p class="demo-note">Demo only — checkout is not connected to a payment provider.</p></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
